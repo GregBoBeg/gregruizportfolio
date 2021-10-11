@@ -1,0 +1,36 @@
+{% load static %}  <!-- Load files out of the static folder -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{% static 'gfolio_app/main.css' %}">  <!--- Generate an absolute URL to the static folder and pulls in the stylesheet -->
+
+    </head>
+
+    <body>
+        <div class="flex-container">
+            <div class="side-menu">
+                <div class="menu-title">Greg Ruiz</div><hr>
+                <div class="menu-item" ><a href="{% url 'gfolio-home' %}">Intro</a></div>
+                <div class="menu-item" ><a href="{% url 'whyGreg' %}">Why Me?</a></div>
+                <div class="menu-item" ><a href="{% url 'bio' %}">Bio</a></div>
+                <div class="menu-title">Sample Projects</div><hr>
+                <div class="menu-item" ><a href="{% url 'project' 'GMart' %}">GMart</a></div>
+                <div class="menu-item" ><a href="{% url 'project' 'GTalk' %}">GTalk</a></div>
+                <div class="menu-item" ><a href="{% url 'project' 'ViviX' %}">ViviX</a></div>
+                <div class="menu-item" ><a href="{% url 'project' 'WeboMatic' %}">WeboMatic</a></div>
+                <div class="menu-item" ><a href="{% url 'project' 'Buzz Report' %}">Buzz Report</a></div>
+            </div>
+            <div class="main-content">
+            <!-- body content -->
+            {% block content %}{% endblock %}
+            </div>
+        </div>
+        
+    </body>
+</html>

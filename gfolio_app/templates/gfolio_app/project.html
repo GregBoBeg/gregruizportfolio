@@ -1,0 +1,48 @@
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+
+
+<div class="image-box">
+    <div>
+    <div class="proj-img">
+        <div id="prog-img" class="proj-img-inner">
+            <div class="proj-img-front">
+                <img src="/media/content_images/project-{{ projectName }}.png">
+            </div>
+            <div class="proj-img-back">
+                <img src="/media/content_images/ImgGear.png">
+            </div>
+        </div>
+    </div>
+    </div>
+    <div>
+        <p class="image-title">{{ projectName }}</p>
+        {% with "gfolio_app/project-"|add:projectName|add:".html" as projectLink %}
+            {% include projectLink %}
+        {% endwith %}
+    </div>
+</div>
+
+<script>
+    let flip = document.getElementById("BTSButton");
+    if (flip) {
+        flip.addEventListener("mouseenter", function( event ) {
+            document.getElementById('prog-img').classList.add('hover');
+        });
+        flip.addEventListener("mouseleave", function( event ) {
+            document.getElementById('prog-img').classList.remove('hover');
+        });
+    };
+
+    let zoom = document.getElementById("TDButton");
+    if (zoom) {
+        zoom.addEventListener("mouseenter", function( event ) {
+            document.getElementById('prog-img').classList.add('zoom');
+        });
+        zoom.addEventListener("mouseleave", function( event ) {
+            document.getElementById('prog-img').classList.remove('zoom');
+        });
+    };
+</script>
+
+{% endblock content %}
