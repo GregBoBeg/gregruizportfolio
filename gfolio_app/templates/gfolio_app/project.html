@@ -18,7 +18,7 @@
     <div>
         <p class="image-title">{{ projectName }}</p>
         {% with "gfolio_app/project-"|add:projectName|add:".html" as projectLink %}
-            {% include projectLink %}
+            {% include projectLink|lower %}
         {% endwith %}
     </div>
 </div>
