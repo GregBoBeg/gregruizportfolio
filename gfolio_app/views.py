@@ -9,6 +9,7 @@ def whyGreg(request):
 def bio(request):
     return render(request, 'gfolio_app/bio.html')
 
+
 def project(request, projectName):
     context = {"projectName": projectName}
     return render(request, 'gfolio_app/project.html', context)

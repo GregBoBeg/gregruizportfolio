@@ -14,6 +14,11 @@
 
     <body>
         <div class="flex-container">
+            <!-- Decorate the menu with the word "Portfolio"-->
+            <div class="site-title-container">
+                <p class="site-title">Portfolio</p>
+            </div>
+            <!-- Side Menu -->
             <div class="side-menu">
                 <div class="menu-title">Greg Ruiz</div><hr>
                 <div class="menu-item" ><a href="{% url 'gfolio-home' %}">Intro</a></div>
@@ -25,9 +30,10 @@
                 <div class="menu-item" ><a href="{% url 'project' 'ViviX' %}">ViviX</a></div>
                 <div class="menu-item" ><a href="{% url 'project' 'WeboMatic' %}">WeboMatic</a></div>
                 <div class="menu-item" ><a href="{% url 'project' 'Buzz Report' %}">Buzz Report</a></div>
+                <div class="menu-item" ><a href="{% url 'project' 'This Portfolio' %}">This Portfolio</a></div>
             </div>
             <div class="main-content">
-            <!-- body content -->
+            <!-- Body Content -->
             {% block content %}{% endblock %}
             </div>
         </div>

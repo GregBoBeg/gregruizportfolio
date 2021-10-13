@@ -3,6 +3,7 @@
 
 #37332f - Brown Dark
 #d8d7d7 - Brown Light
+#b6a99c - Brown Faded
 #00528c - Blue Dark
 #c5e2ff - Blue Light
 
@@ -10,6 +11,7 @@
 
 
 
+ /*----------------*/
 /* General Styles */
 
 html {
@@ -26,10 +28,6 @@ body {
     padding: 0;
     border-top: 10px solid #37332f;
     border-bottom: 10px solid #37332f;
-}
-
-p {
-    
 }
 
 a {
@@ -64,13 +62,41 @@ hr {
     margin-top: 25px;
 }
 
+.profile-img {
+    width: 220px;
+}
+
+.profile-img img {
+    width: 200px;
+}
 
 
+ /*------------*/
+/* Site Title */
+
+.site-title-container {
+    text-align: left;
+}
+
+.site-title { 
+    font-size: 87px;
+    font-weight: bold;
+    color: #b6a99c;
+    writing-mode: vertical-rl; 
+    transform: rotate(-180deg);
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    margin: 30px 10px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+ /*-----------*/
 /* Side Menu */
 
 .flex-container {
     display: flex;
-    align-items: center;
+    align-items: top;
     margin: auto -1rem 1rem;
     max-width: 960px;
     margin: auto;
@@ -91,6 +117,7 @@ hr {
 }
 
 .menu-title {
+    font-weight: bold;
     margin: 10px 0px 4px 0px;
 }
 
@@ -107,18 +134,20 @@ hr {
 }
 
 
-  /* Project Images */
+ /*----------------*/
+/* Project Images */
 
 .image-box {
     display:flex;
     flex-wrap: nowrap;
-    margin: 30px 0px 30px 0px;
+    margin: 30px 0px 10px 0px;
 }
 
 .image-box img {
     flex-grow:0;
     flex-shrink:0;
-    margin: 0px 30px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    display: inline-block;
     align-self: flex-start;
     border: 0.2px solid #37332f;
     border-radius: 3px;
@@ -138,7 +167,7 @@ hr {
 
 .proj-img {
     background-color: transparent;
-    width: 240px;
+    width: 220px;
     perspective: 800px;
 }
 
