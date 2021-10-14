@@ -1,0 +1,34 @@
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+
+
+
+<div class="image-box">
+    <div>
+        <div class="proj-img">
+            <div id="proj-img" class="proj-img-inner">
+                <div class="proj-img-front">
+                    <img src="../media/content_images/project-this portfolio.png">
+                </div>
+                <div class="proj-img-back">
+                    <img src="../media/content_images/ImgGear.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class="image-title">My Portfolio</p>
+        <p>
+            This portfolio site provides an overview of sample projects, while also serving as a design and tecnical example itself.
+        </p>
+        <p class="link-list"><a class="menu-item" href="#" target=" " id="folioButton">Behind The Scenes</a></p>
+    </div>
+</div>
+<div id="portfolioBTS" class="element-to-fade BTSdiv">
+    {% include "gfolio_app/portfolioBTS.html" %}
+</div>
+
+{% endblock content %}
+
+
+

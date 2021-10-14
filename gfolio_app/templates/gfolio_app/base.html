@@ -30,13 +30,50 @@
                 <div class="menu-item" ><a href="{% url 'project' 'ViviX' %}">ViviX</a></div>
                 <div class="menu-item" ><a href="{% url 'project' 'WeboMatic' %}">WeboMatic</a></div>
                 <div class="menu-item" ><a href="{% url 'project' 'Buzz Report' %}">Buzz Report</a></div>
-                <div class="menu-item" ><a href="{% url 'project' 'This Portfolio' %}">This Portfolio</a></div>
+                <div class="menu-item" ><a href="{% url 'portfolio' %}">This Portfolio</a></div>
             </div>
             <div class="main-content">
             <!-- Body Content -->
             {% block content %}{% endblock %}
             </div>
         </div>
-        
     </body>
 </html>
+
+<script>
+
+    let hoverFlip = document.getElementById("BTSButton");
+    if (hoverFlip) {
+        hoverFlip.addEventListener("mouseenter", function( event ) {
+            document.getElementById('proj-img').classList.add('flip-element');
+        });
+        hoverFlip.addEventListener("mouseleave", function( event ) {
+            document.getElementById('proj-img').classList.remove('flip-element');
+        });
+    };
+
+    let hoverZoom = document.getElementById("TDButton");
+    if (hoverZoom) {
+        hoverZoom.addEventListener("mouseenter", function( event ) {
+            document.getElementById('proj-img').classList.add('zoom-element');
+        });
+        hoverZoom.addEventListener("mouseleave", function( event ) {
+            document.getElementById('proj-img').classList.remove('zoom-element');
+        });
+    };
+
+    let folioAction = document.getElementById("folioButton");
+    if (folioAction) {
+        folioAction.addEventListener("mouseenter", function( event ) {
+            document.getElementById('proj-img').classList.add('flip-element');
+        });
+        folioAction.addEventListener("mouseleave", function( event ) {
+            document.getElementById('proj-img').classList.remove('flip-element');
+        });
+        folioAction.addEventListener("click", function( event ) {
+            console.log("clicked it");
+            document.getElementById('portfolioBTS').classList.add('fade-in-element');
+        });
+    };
+
+</script>

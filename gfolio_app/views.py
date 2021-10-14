@@ -9,6 +9,9 @@ def whyGreg(request):
 def bio(request):
     return render(request, 'gfolio_app/bio.html')
 
+def portfolio(request):
+    return render(request, 'gfolio_app/portfolio.html')
+
 
 def project(request, projectName):
     context = {"projectName": projectName}
