@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-^nl$5jlsdytxrx^$t8o%u=@b*zhhgh=y@xo%4)uve1hck24f#-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.gregruiz.com','gfolio.us-west-2.elasticbeanstalk.com','localhost']
+ALLOWED_HOSTS = ['www.gregruiz.com','gregruiz.com','gfolio.us-west-2.elasticbeanstalk.com','localhost']
 
 EC2_PRIVATE_IP = None
 try:
