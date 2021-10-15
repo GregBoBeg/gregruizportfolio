@@ -30,6 +30,10 @@ body {
     border-bottom: 10px solid #37332f;
 }
 
+p {
+    margin: 10px 0px 10px 0px;
+}
+
 a {
     color: #00528c; 
     text-decoration: none;
@@ -47,6 +51,9 @@ a:hover {
 h1 {
     margin: 0;
 }
+h3 {
+    margin: 15px 0px 0px 0px;
+}
 
 hr {
     border-top: 0.2px solid;
@@ -58,7 +65,7 @@ hr {
     font-family: Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
     font-style: italic;
     font-size: 1.3rem;
-    line-height: .6rem;
+    line-height: 1rem;
     margin-top: 25px;
 }
 

@@ -41,7 +41,6 @@
 </html>
 
 <script>
-
     let hoverFlip = document.getElementById("BTSButton");
     if (hoverFlip) {
         hoverFlip.addEventListener("mouseenter", function( event ) {
@@ -62,16 +61,25 @@
         });
     };
 
+    var folioButtonClick = false;
     let folioAction = document.getElementById("folioButton");
     if (folioAction) {
+
         folioAction.addEventListener("mouseenter", function( event ) {
             document.getElementById('proj-img').classList.add('flip-element');
         });
+
         folioAction.addEventListener("mouseleave", function( event ) {
-            document.getElementById('proj-img').classList.remove('flip-element');
+            if (folioButtonClick == false) {
+                console.log('clicked and false')
+                document.getElementById('proj-img').classList.remove('flip-element');
+            };
         });
+        
+        
         folioAction.addEventListener("click", function( event ) {
-            console.log("clicked it");
+            folioButtonClick = true;
+            console.log('set to true');
             document.getElementById('portfolioBTS').classList.add('fade-in-element');
         });
     };
