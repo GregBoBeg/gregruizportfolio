@@ -1,3 +1,9 @@
+
+<!-- This page contains content to be inserted into the Base Template,
+     which also includes project details that are dynamically loaded,
+     based on which which project is selected from the main menu.
+-->
+
 {% extends "gfolio_app/base.html" %}
 {% block content %}
 
@@ -15,6 +21,9 @@
             </div>
         </div>
     </div>
+
+<!-- Use the "projectName" selected to dynamically load the corresponding HTML content -->
+
     <div>
         <p class="image-title">{{ projectName }}</p>
         {% with "gfolio_app/project-"|add:projectName|add:".html" as projectLink %}

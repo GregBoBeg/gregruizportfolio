@@ -1,6 +1,6 @@
 {% load static %}  <!-- Load files out of the static folder -->
 
-
+<!-- Base Template for providing common layout for every web page -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,11 +14,11 @@
 
     <body>
         <div class="flex-container">
-            <!-- Decorate the menu with the word "Portfolio"-->
+            <!-- Portfolio - The word "Portfolio" is turned sideways and enlarged on the page for added design appeal. -->
             <div class="site-title-container">
                 <p class="site-title">Portfolio</p>
             </div>
-            <!-- Side Menu -->
+            <!-- Side Menu - This is the main menu, which is positioned to the left of each page's content. -->
             <div class="side-menu">
                 <div class="menu-title">Greg Ruiz</div><hr>
                 <div class="menu-item" ><a href="{% url 'gfolio-home' %}">Intro</a></div>
@@ -33,42 +33,56 @@
                 <div class="menu-item" ><a href="{% url 'portfolio' %}">This Portfolio</a></div>
             </div>
             <div class="main-content">
-            <!-- Body Content -->
+            <!-- Body Content - Each webpage's content is inserted here, using the "block content" tag. -->
             {% block content %}{% endblock %}
             </div>
         </div>
     </body>
 </html>
 
+<!-- JavaScript for triggering CSS annimation -->
+
 <script>
     let hoverFlip = document.getElementById("BTSButton");
+
+    /* Flip Annimation on hover events, if a "Behind the Scenes" button exists on the page */
     if (hoverFlip) {
+        /* Flip the image to the back when hoverring */
         hoverFlip.addEventListener("mouseenter", function( event ) {
             document.getElementById('proj-img').classList.add('flip-element');
         });
+        /* Flip the image to the front when not hoverring */
         hoverFlip.addEventListener("mouseleave", function( event ) {
             document.getElementById('proj-img').classList.remove('flip-element');
         });
     };
 
+    /* Zoom Annimation on hover events, if a "Test Drive" button exists on the page */
+
     let hoverZoom = document.getElementById("TDButton");
     if (hoverZoom) {
+        /* Zoom-in the image when hoverring */
         hoverZoom.addEventListener("mouseenter", function( event ) {
             document.getElementById('proj-img').classList.add('zoom-element');
         });
+        /* Zoom-out the image when not hoverring */
         hoverZoom.addEventListener("mouseleave", function( event ) {
             document.getElementById('proj-img').classList.remove('zoom-element');
         });
     };
 
+    /* Annimation for when the folioButton exists and is clicked */
+
     var folioButtonClick = false;
     let folioAction = document.getElementById("folioButton");
     if (folioAction) {
 
+        /* Flip the image to the back when hoverring */
         folioAction.addEventListener("mouseenter", function( event ) {
             document.getElementById('proj-img').classList.add('flip-element');
         });
 
+        /* Flip the image to the front when hoverring if the follioButton hasn't been clicked yet */
         folioAction.addEventListener("mouseleave", function( event ) {
             if (folioButtonClick == false) {
                 console.log('clicked and false')
@@ -76,7 +90,7 @@
             };
         });
         
-        
+        /* Fade-in text when follioButton is clicked */
         folioAction.addEventListener("click", function( event ) {
             folioButtonClick = true;
             console.log('set to true');

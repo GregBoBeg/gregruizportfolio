@@ -1,3 +1,9 @@
+
+<!-- This page contains content to be inserted into the Base Template.
+     It also uses the "include" tag to pull-in content about the project,
+     which is then animated with CSS animation techniques.
+-->
+
 {% extends "gfolio_app/base.html" %}
 {% block content %}
 
@@ -24,6 +30,8 @@
         <p class="link-list"><a class="menu-item" href="#" target=" " id="folioButton">Behind The Scenes</a></p>
     </div>
 </div>
+
+<!-- Pull-in project details -->
 <div id="portfolioBTS" class="element-to-fade BTSdiv">
     {% include "gfolio_app/portfolioBTS.html" %}
 </div>

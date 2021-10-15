@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+#   Route to static web pages
+
 def index(request):
     return render(request, 'gfolio_app/index.html')
 
@@ -12,6 +14,7 @@ def bio(request):
 def portfolio(request):
     return render(request, 'gfolio_app/portfolio.html')
 
+#   Route to dynamicly-loaded project pages
 
 def project(request, projectName):
     context = {"projectName": projectName}
