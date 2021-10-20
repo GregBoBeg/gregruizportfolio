@@ -14,6 +14,9 @@ def bio(request):
 def portfolio(request):
     return render(request, 'gfolio_app/portfolio.html')
 
+def qualifications(request):
+    return render(request, 'gfolio_app/qualifications.html')
+
 #   Route to dynamicly-loaded project pages
 
 def project(request, projectName):

@@ -69,6 +69,11 @@ hr {
     margin-top: 25px;
 }
 
+.div-container {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
 .profile-img {
     width: 220px;
 }
@@ -86,7 +91,7 @@ hr {
 }
 
 .site-title { 
-    font-size: 87px;
+    font-size: 95px;
     font-weight: bold;
     color: #b6a99c;
     writing-mode: vertical-rl; 
@@ -126,6 +131,7 @@ hr {
 
 .menu-title {
     font-weight: bold;
+    font-size: 20px;
     margin: 10px 0px 4px 0px;
 }
 
