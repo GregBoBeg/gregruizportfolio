@@ -9,6 +9,7 @@ urlpatterns = [
     path('bio/', views.bio, name="bio" ),
     path('portfolio/', views.portfolio, name="portfolio" ),
     path('qualifications/', views.qualifications, name="qualifications" ),
+    path('past-projects/', views.pastProjects, name="pastProjects" ),
 
 #   Match URL Paths and call related views for dynamicly-loaded project pages
     path('project/<str:projectName>/', views.project, name='project')
