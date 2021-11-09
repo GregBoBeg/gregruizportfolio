@@ -12,5 +12,5 @@ urlpatterns = [
     path('past-projects/', views.pastProjects, name="pastProjects" ),
 
 #   Match URL Paths and call related views for dynamicly-loaded project pages
-    path('project/<str:projectName>/', views.project, name='project')
+    path('<str:projectName>/', views.project, name='project')
 ]
