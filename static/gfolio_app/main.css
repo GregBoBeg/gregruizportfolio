@@ -1,0 +1,278 @@
+
+/* Color Palette 
+
+#37332f - Brown Dark
+#d8d7d7 - Brown Light
+#b6a99c - Brown Faded
+#00528c - Blue Dark
+#c5e2ff - Blue Light
+
+*/
+
+
+
+ /*----------------*/
+/* General Styles */
+
+html {
+    font-family: "Open Sans", sans-serif; 
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #37332f;
+    background-color: #00528c;
+}
+
+body {
+    margin: 100px 0px 100px 0px;
+    background-color: #d8d7d7;
+    padding: 0;
+    border-top: 10px solid #37332f;
+    border-bottom: 10px solid #37332f;
+    overflow-y: scroll;
+}
+
+p {
+    margin: 10px 0px 10px 0px;
+}
+
+a {
+    color: #00528c; 
+    text-decoration: none;
+    padding: 2px 6px 2px 6px;
+}
+
+a:hover {
+    color: #00528c;
+    color: white;
+    background: #00528c;
+    border-radius: 3px 3px 3px 3px;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0;
+}
+h3 {
+    margin: 15px 0px 0px 0px;
+}
+
+hr {
+    border-top: 0.2px solid;
+    margin: 0;
+    padding: 0;
+    }
+
+.special-text {
+    font-family: Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    margin-top: 15px;
+}
+
+.quoted-text {
+    font-style: italic;
+    margin-top: 25px;
+}
+
+.signature-text {
+    margin-left: 25px;
+}
+
+.div-container {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.profile-img {
+    width: 220px;
+}
+
+.profile-img img {
+    width: 200px;
+}
+
+
+ /*------------*/
+/* Site Title */
+
+.site-title-container {
+    text-align: left;
+}
+
+.site-title { 
+    font-size: 110px;
+    font-weight: bold;
+    color: #b6a99c;
+    writing-mode: vertical-rl; 
+    transform: rotate(-180deg);
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    margin: 30px 10px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+
+ /*-----------*/
+/* Side Menu */
+
+.flex-container {
+    display: flex;
+    align-items: top;
+    margin: auto -1rem 1rem;
+    max-width: 960px;
+    margin: auto;
+}
+
+.side-menu {
+    flex: 1;
+    order: 1;
+    align-self: flex-start;
+
+    margin: 10px 60px 20px 20px;
+    padding: 10px;
+}
+
+.main-content {
+    flex: 4;
+    order: 1;
+}
+
+.menu-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0px 4px 0px;
+}
+
+.menu-item {
+    margin: 4px 0px 0px 12px;
+}
+
+.menu-item a{
+    display: block;
+}
+
+.link-list {
+    margin: 8px 0px 0px 0px;
+}
+
+
+ /*----------------*/
+/* Project Images */
+
+.image-box {
+    display:flex;
+    flex-wrap: nowrap;
+    margin: 30px 0px 10px 0px;
+}
+
+.image-box img {
+    flex-grow:0;
+    flex-shrink:0;
+    margin: 0px 0px 0px 0px;
+    display: inline-block;
+    align-self: flex-start;
+    border: 0.2px solid #37332f;
+    border-radius: 3px;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+}
+
+.image-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.proj-img {
+    background-color: transparent;
+    width: 220px;
+    perspective: 800px;
+}
+
+.proj-img-inner {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.proj-img-inner.flip-element {
+    transform: rotateY(180deg);
+}
+
+.proj-img-inner.zoom-element {
+    transform: scale(1.02, 1.02);
+}
+
+.proj-img-front, .proj-img-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.proj-img-front {
+}
+
+.proj-img-front img{
+    width: 200px;
+}
+
+.proj-img-back {
+    transform: rotateY(180deg);
+}
+
+.proj-img-back img {
+    width: 200px;
+}
+
+#portfolioBTS {
+    margin: 30px 0px 0px 0px;
+}
+
+.element-to-fade {
+    opacity: 0;
+}
+
+.fade-in-element {
+    -webkit-animation: fadein 2s forwards; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s forwards; /* Firefox < 16 */
+        -ms-animation: fadein 2s forwards; /* Internet Explorer */
+         -o-animation: fadein 2s forwards; /* Opera < 12.1 */
+            animation: fadein 2s forwards;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

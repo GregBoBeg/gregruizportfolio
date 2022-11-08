@@ -25,14 +25,15 @@
                 <div class="menu-item" ><a href="{% url 'qualifications' %}">Qualifications</a></div>
                 <div class="menu-item" ><a href="{% url 'whyGreg' %}">Why Me?</a></div>
                 <div class="menu-item" ><a href="{% url 'bio' %}">Bio</a></div>
+                <div class="menu-item" ><a href="{% url 'credibility' %}">Credibility</a></div>
                 <div class="menu-title">Sample Projects</div><hr>
-                <div class="menu-item" ><a href="{% url 'project' 'GMart' %}">GMart</a></div>
-                <div class="menu-item" ><a href="{% url 'project' 'GTalk' %}">GTalk</a></div>
-                <div class="menu-item" ><a href="{% url 'portfolio' %}">This Portfolio</a></div>
-                <div class="menu-item" ><a href="{% url 'project' 'BuzzReport' %}">Buzz Report</a></div>
-                <div class="menu-item" ><a href="{% url 'project' 'ViviX' %}">ViviX</a></div>
-                <div class="menu-item" ><a href="{% url 'project' 'WeboMatic' %}">WeboMatic</a></div>
-                <div class="menu-item" ><a href="{% url 'pastProjects' %}">Past Projects</a></div>
+                <div class="menu-item" ><a href="{% url 'project-nonomedia' %}">NoNoMedia</a></div>
+                <div class="menu-item" ><a href="{% url 'project-doneez' %}">DoneEZ</a></div>
+                <div class="menu-item" ><a href="{% url 'project-gmart' %}">GMart</a></div>
+                <div class="menu-item" ><a href="{% url 'project-gtalk' %}">GTalk</a></div>
+                <div class="menu-item" ><a href="{% url 'project-buzzreport' %}">Buzz Report</a></div>
+                <div class="menu-item" ><a href="{% url 'project-vivix' %}">ViviX</a></div>
+                <div class="menu-item" ><a href="{% url 'project-past' %}">Past Projects</a></div>
             </div>
             <div class="main-content">
             <!-- Body Content - Each webpage's content is inserted here, using the "block content" tag. -->
@@ -45,24 +46,36 @@
 <!-- JavaScript for triggering CSS annimation -->
 
 <script>
-    let hoverFlip = document.getElementById("BTSButton");
 
-    /* Flip Annimation on hover events, if a "Behind the Scenes" button exists on the page */
-    if (hoverFlip) {
-        /* Flip the image to the back when hoverring */
-        hoverFlip.addEventListener("mouseenter", function( event ) {
-            document.getElementById('proj-img').classList.add('flip-element');
-        });
-        /* Flip the image to the front when not hoverring */
-        hoverFlip.addEventListener("mouseleave", function( event ) {
+
+    /* Show BTS: Behind The Scenes when BTSButton is clicked */
+    let BTSShow = false;
+    let btsInfo = document.getElementById("BTSInfo");
+
+    BTSButton.addEventListener("click", function( event ) {
+        event.preventDefault();
+        if (BTSShow) {
+            BTSShow = false;
             document.getElementById('proj-img').classList.remove('flip-element');
-        });
-    };
+            BTSButton.classList.remove('btn-selected');
+            btsInfo.classList.remove('accordion');
+            btsInfo.style.height = '0px'
+        } else {
+            BTSShow = true;
+            document.getElementById('proj-img').classList.add('flip-element');
+            BTSButton.classList.add('btn-selected');
+            btsInfo.classList.add('accordion');
+            btsInfo.style.height = btsInfo.scrollHeight + "px";
+        }
+    });
 
+
+    
     /* Zoom Annimation on hover events, if a "Test Drive" button exists on the page */
 
     let hoverZoom = document.getElementById("TDButton");
     if (hoverZoom) {
+        event.preventDefault();
         /* Zoom-in the image when hoverring */
         hoverZoom.addEventListener("mouseenter", function( event ) {
             document.getElementById('proj-img').classList.add('zoom-element');
@@ -101,3 +114,4 @@
     };
 
 </script>
+

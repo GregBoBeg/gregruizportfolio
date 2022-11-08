@@ -1,0 +1,93 @@
+
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+<div>
+    <div class="image-box">
+        <div>
+            <div class="proj-img">
+                <div id="proj-img" class="proj-img-inner">
+                    <div class="proj-img-front">
+                        <img src="/media/content_images/project-nonomedia.png">
+                    </div>
+                    <div class="proj-img-back">
+                        <img src="/media/content_images/ImgGear.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Use the "projectName" selected to dynamically load the corresponding HTML content -->
+
+        <div>
+            <h1>NoNoMedia.net</h1>
+            <p class="link-list"><a class="link-item accordion" href="" target=" " id="BTSButton">Behind The Scenes</a></p>
+            <p class="link-list"><a class="link-item" href="https://www.nonomedia.net/" target="_blank" rel="noopener noreferrer" id="TDButton">Test Drive {{ projectName }}</a></p>
+            <p class="link-item-off">Code Available Upon Request</p>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="proj-content">
+    <h3>Application Overview</h3>
+    <p>
+        NoNoMedia.net is a news aggregator and political-movement website that empowers readers to hold journalists accountable for the articles they publish.
+        NoNoMedia gives readers the ability to vote and comment on articles published by journalists from other news organizations.
+        Each month, votes are tallied to determine the winning authors of the most trusted and least trusted news articles.
+    </p>
+    <h3>Client's Recommendation</h3>
+    <p>
+        "We worked closely with Greg on our project and we are extremely pleased with his knowledge and expertise. 
+        Most importantly, Greg listened intently to our project goals and made recommendations on how to accomplish them.
+        He is a true professional and has become an intricate part of our team."
+        <br><br>
+        Richard Molaison Jr<br>
+        CEO, Factsearch LLC <br>
+        www.nonomedia.net
+    </p>
+
+    <div id="BTSInfo" class="proj-bts">
+        <hr>
+        <div>
+            <div class="bts-img-container-outer">
+                Tech Stack
+                <div class="bts-img-container-inner">
+                    <img class="bts-img" src="/media/content_images/LogoPython.png">
+                    <img class="bts-img" src="/media/content_images/LogoDjango.png">
+                    <img class="bts-img" src="/media/content_images/LogoPostgreSQL.png">
+                    <img class="bts-img" src="/media/content_images/LogoREST.png">
+                    <img class="bts-img" src="/media/content_images/LogoReact.png">
+                    <img class="bts-img" src="/media/content_images/LogoBootstrap.png">
+                    <img class="bts-img" src="/media/content_images/Logo-Javascript-HTML-CSS.jpg">
+                    <img class="bts-img" src="/media/content_images/LogoHeroku.png">
+                    <img class="bts-img" src="/media/content_images/LogoGit.png">
+                    <img class="bts-img" src="/media/content_images/LogoGitHub.png">
+                </div>
+            </div>
+                <p class="bts-title">Behind The Scenes</p>
+                <p>
+                    NoNoMedia's architecture forges modern design concepts into a sophisticated solution for readers and content providers alike.
+                    This full-stack project has a Python/Django backend running on a PostgreSQL database, with the data served up through Django REST APIs to a React front-end.
+                </p>
+                <p>
+                    The application leverages a customized Django admin implementation for managing content such as news articles, determining winning authors, and managing the overall application presentation.
+                    A custom User model provides account logins using email and unique usernames for online identity purposes.
+                    Extensive application security is accomplished by leveraging Django, Django Knox and Django REST security capabilities, along with custom middleware written to enable HTTPOnly cookie storage in the browser.
+                </p>
+                <p>
+                    The frontend, is a single page application (SPA) constructed in JS/React, with a clean, responsive user interface. 
+                    It includes a full login process that enforces authentication-required functionality, along with an email verification system for account activation.
+                    Registered users are empowered to vote and comment on articles.  
+                    Votes and comments are tracked on a per-article, per-user basis for and are served up via complex database queries to form an elegant mix of both detailed tracking and ease-of-use.
+                    Complex logic and queries are handeled with a customized views and serializers to deliver simplicity throughout the user experience.
+                    The site also includes an on-going photo library that allows recycling prior photos for future news articles. 
+                </p>
+                <p>
+                    
+                </p>
+            </div>
+    </div>
+</div>
+
+{% endblock content %}

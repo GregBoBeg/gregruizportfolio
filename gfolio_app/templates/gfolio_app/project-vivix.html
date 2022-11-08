@@ -1,21 +1,58 @@
 
-<!-- The following content will be inserted into the "project.html" template -->
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+<div>
+    <div class="image-box">
+        <div>
+            <div class="proj-img">
+                <div id="proj-img" class="proj-img-inner">
+                    <div class="proj-img-front">
+                        <img src="/media/content_images/project-vivix.png">
+                    </div>
+                    <div class="proj-img-back">
+                        <img src="/media/content_images/ImgGear.png">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<p>
-    ViviXTV.com is a website for a company I was launching before Covid drastically impacted 
-    the hospitality industry and our international supply chain.  
-    Although I have decided to not pursue the business, the website still serves as a 
-    good example of basic website design for small businesses.  
-</p>
-<p>
-    The site needed to be a basic-brochure style site with no programmable functionality;
-    therefore, it was built on the Weebly platform, using a template that I customized for our needs.
-    The site incorporates our logo design, market messaging, downloadable product specs, 
-    and actual photos of our products and manufacturing facilities.
-</p>
-<p>
-    This site is a good example of my design work, if you are looking for a simple brochure-style website, 
-    tailored around your products, services, and marketing needs.
-</p>
+    <!-- Use the "projectName" selected to dynamically load the corresponding HTML content -->
 
-<p class="link-list"><a class="menu-item" href="https://www.vivixtv.com" target=" " id="TDButton">Test Drive {{ projectName }}</a></p>
+        <div>
+            <h1>ViviX TV</h1>
+            <p class="link-list"><a class="link-item accordion" href="" target=" " id="BTSButton">Behind The Scenes</a></p>
+            <p class="link-list"><a class="link-item" href="https://www.vivixtv.com/" target="_blank" rel="noopener noreferrer" id="TDButton">Visit ViviX</a></p>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<div class="proj-content">
+    <h3>Application Overview</h3>
+    <p>
+        ViviXTV.com is a website for a company I was launching before Covid drastically impacted 
+        the hospitality industry and our international supply chain.  
+        Although I have decided to not pursue the business, the website still serves as a 
+        good example of basic website design for small businesses.  
+        </p>   
+    <div id="BTSInfo" class="proj-bts">
+        <hr>
+        <div>
+            <p class="bts-title">Behind The Scenes</p >
+            <p>
+                This site needed to be a basic-brochure style site with no programmable functionality;
+                therefore, it was built on the Weebly platform, using a template that I customized for our needs.
+                The site incorporates our logo design, market messaging, downloadable product specs, 
+                and actual photos of our products and manufacturing facilities.
+            </p>
+            <p>
+                This site is a good example of my front-end design work.  If you are looking for a simple brochure-style website, 
+                tailored around your products, services, and marketing needs, then this example may inspire you.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

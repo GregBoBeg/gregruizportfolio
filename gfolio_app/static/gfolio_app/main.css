@@ -28,6 +28,7 @@ body {
     padding: 0;
     border-top: 10px solid #37332f;
     border-bottom: 10px solid #37332f;
+    overflow-y: scroll;
 }
 
 p {
@@ -41,11 +42,16 @@ a {
 }
 
 a:hover {
-    color: #00528c;
     color: white;
     background: #00528c;
-    border-radius: 3px 3px 3px 3px;
+    border-radius: 4px 4px 4px 4px;
     cursor: pointer;
+}
+
+a.btn-selected {
+    color: white;
+    background: #00528c;
+    border-radius: 4px 4px 4px 4px;
 }
 
 h1 {
@@ -65,13 +71,36 @@ hr {
     font-family: Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
     font-style: italic;
     font-size: 1.3rem;
-    line-height: 1rem;
-    margin-top: 25px;
+    line-height: 1.7rem;
+    margin-top: 15px;
+}
+
+.quoted-text {
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.signature-text {
+    margin-left: 25px;
+    margin-bottom: 0;
+}
+
+.tight-title {
+    text-align: center;
+    width: fit-content;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .div-container {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
+}
+
+.proj-content {
+    margin: 2em 0em 0em 0em;
+    padding: 0em 0em 0em 0em;
+
 }
 
 .profile-img {
@@ -91,7 +120,7 @@ hr {
 }
 
 .site-title { 
-    font-size: 103px;
+    font-size: 110px;
     font-weight: bold;
     color: #b6a99c;
     writing-mode: vertical-rl; 
@@ -147,6 +176,23 @@ hr {
     margin: 8px 0px 0px 0px;
 }
 
+.link-item {
+    margin: 0px 0px 0px 0px;
+}
+
+.link-item-off {
+    margin: 8px 0px 0px 8px;
+    color: gray;
+}
+
+.link-item-off:hover {
+    cursor: default;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 
  /*----------------*/
 /* Project Images */
@@ -164,15 +210,23 @@ hr {
     display: inline-block;
     align-self: flex-start;
     border: 0.2px solid #37332f;
-    border-radius: 3px;
-    box-shadow: 10px 10px 5px #ccc;
-    -moz-box-shadow: 10px 10px 5px #ccc;
-    -webkit-box-shadow: 10px 10px 5px #ccc;
-    -khtml-box-shadow: 10px 10px 5px #ccc;
+    border-radius: 4px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    -khtml-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
 }
 
 .image-title {
     font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.big-cap {
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -189,7 +243,7 @@ hr {
     position: relative;
     width: 200px;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
 }
 
@@ -198,7 +252,7 @@ hr {
 }
 
 .proj-img-inner.zoom-element {
-    transform: scale(1.02, 1.02);
+    transform: scale(1.03, 1.03);
 }
 
 .proj-img-front, .proj-img-back {
@@ -206,6 +260,17 @@ hr {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
+
+.proj-bts {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.6s;
+}
+
+.proj-bts.accordion {
+    overflow: hidden;
+}
+
 
 .proj-img-front {
 }
@@ -224,6 +289,44 @@ hr {
 
 #portfolioBTS {
     margin: 30px 0px 0px 0px;
+}
+
+.bts-img-container-outer {
+    margin: 0px 20px 10px 0px;
+    padding: 0px 0px 0px 0px;
+    float: left;
+    text-align: center;
+}
+
+.bts-img-container-inner {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px 4px 4px 4px;
+    background-color: white;
+    border: 1px solid #37332f;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    -khtml-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bts-img {
+    max-width: 100px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    display: block;
+
+}
+
+.bts-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: .5em 0em 0em 0em;
+    padding: 1em 0em 0em 0em;
+}
+
+.bts-txt-container {
+    float: right;
 }
 
 .element-to-fade {

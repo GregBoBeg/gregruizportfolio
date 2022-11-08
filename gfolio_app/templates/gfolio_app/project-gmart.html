@@ -1,11 +1,65 @@
 
-<!-- The following content will be inserted into the "project.html" template -->
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+<div>
+    <div class="image-box">
+        <div>
+            <div class="proj-img">
+                <div id="proj-img" class="proj-img-inner">
+                    <div class="proj-img-front">
+                        <img src="/media/content_images/project-gmart.png">
+                    </div>
+                    <div class="proj-img-back">
+                        <img src="/media/content_images/ImgGear.png">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<p>
-    GMart is a storefront application, developed from scratch, using Python and the Django framework.
-    The project includes an admin backend for user and product maintenance, which was used to create
-    the site's hillarious product descriptions.
-</p>
-<p class="link-list"><a class="menu-item" href="http://gmart.us-west-2.elasticbeanstalk.com/about/" target=" " id="BTSButton">Behind The Scenes</a></p>
-<p class="link-list"><a class="menu-item" href="http://gmart.us-west-2.elasticbeanstalk.com" target=" " id="TDButton">Test Drive {{ projectName }}</a></p>
-<p class="link-list"><a class="menu-item" href="https://github.com/GregBoBeg/GMart/" target=" " id="TDButton">View Code on Github</a></p>
+    <!-- Use the "projectName" selected to dynamically load the corresponding HTML content -->
+
+        <div>
+            <h1>GMart</h1>
+            <p class="link-list"><a class="link-item accordion" href="" target=" " id="BTSButton">Behind The Scenes</a></p>
+            <p class="link-list"><a class="link-item" href="http://gmart.us-west-2.elasticbeanstalk.com" target="_blank" rel="noopener noreferrer" id="TDButton">Test Drive {{ projectName }}</a></p>
+            <p class="link-list"><a class="link-item" href="https://github.com/GregBoBeg/GMart/" target="_blank" rel="noopener noreferrer" id="TDButton">View Code on Github</a></p>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="proj-content">
+    <h3>Application Overview</h3>
+    <p>
+        GMart is a storefront application, developed from scratch, using Python and the Django framework.
+        The project includes an admin backend for user and product maintenance, which was used to create
+        the site's <span class="quoted-text bold">hillarious product descriptions.</span>
+    </p>   
+    <div id="BTSInfo" class="proj-bts">
+        <hr>
+        <div>
+            <div class="bts-img-container-outer">
+                Tech Stack
+                <div class="bts-img-container-inner">
+                    <img class="bts-img" src="/media/content_images/LogoPython.png">
+                    <img class="bts-img" src="/media/content_images/LogoDjango.png">
+                    <img class="bts-img" src="/media/content_images/LogoPostgreSQL.png">
+                    <img class="bts-img" src="/media/content_images/LogoBootstrap.png">
+                    <img class="bts-img" src="/media/content_images/Logo-Javascript-HTML-CSS.jpg">
+                    <img class="bts-img" src="/media/content_images/LogoAWS01.png">
+                    <img class="bts-img" src="/media/content_images/LogoGit.png">
+                    <img class="bts-img" src="/media/content_images/LogoGitHub.png">
+                </div>
+            </div>
+            <p class="bts-title">Behind The Scenes</p >
+            <p>GMart is a storefront application developed in Python, from scratch, using the Django framework. It includes an implementation of the Django admin backend for managing products, categories and users. Additionally, a custom implementation of the authentication framework allows for front-end user account management.</p>
+            <p>The storefront allows members to shop for products, storing selections in their shopping cart.  Members can view the contents of their carts, remove items, adjust quantities, etc.</p>
+            <p>The application uses bootstrap for CSS styling throughout the site, including the carousel and card components for product presentation.</p>
+            <p>And finally, vanilla javascript is used to create dynamic elements such as modifying product quantities in the DOM, which are passed back to Django, creating dynamic SPA-type functionality for an improved user experience. </p>
+            <p>GMart has been deployed to a cloud environment, on the AWS platform.  The project is maintained with version control, using GIT, and pushed to a Github repository.  AWS deployment is configured with a CodePipeline to automatically recognize and deploy changes from the Github repository. </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

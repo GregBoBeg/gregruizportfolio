@@ -1,9 +1,79 @@
 
-<!-- The following content will be inserted into the "project.html" template -->
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+<div>
+    <div class="image-box">
+        <div>
+            <div class="proj-img">
+                <div id="proj-img" class="proj-img-inner">
+                    <div class="proj-img-front">
+                        <img src="/media/content_images/project-gtalk.png">
+                    </div>
+                    <div class="proj-img-back">
+                        <img src="/media/content_images/ImgGear.png">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<p>
-    GTalk is a chat app developed in vanilla Javascript, which uses Node.js, Express and Socket.IO for backend communication between users.
-</p>
-<p class="link-list"><a class="menu-item" href="https://gtalk.herokuapp.com/about.html" target=" " id="BTSButton">Behind The Scenes</a></p>
-<p class="link-list"><a class="menu-item" href="https://gtalk.herokuapp.com/" target=" " id="TDButton">Test Drive {{ projectName }}</a></p>
-<p class="link-list"><a class="menu-item" href="https://github.com/GregBoBeg/GTalk/" target=" ">View Code on Github</a></p>
+    <!-- Use the "projectName" selected to dynamically load the corresponding HTML content -->
+
+        <div>
+            <h1>GTalk</h1>
+            <p class="link-list"><a class="link-item accordion" href="" target=" " id="BTSButton">Behind The Scenes</a></p>
+            <p class="link-list"><a class="link-item" href="https://gtalk.herokuapp.com/" target="_blank" rel="noopener noreferrer" id="TDButton">Test Drive GTalk</a></p>
+            <p class="link-list"><a class="link-item" href="https://github.com/GregBoBeg/GTalk" target="_blank" rel="noopener noreferrer" id="TDButton">View Code on Github</a></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="proj-content">
+    <h3>Application Overview</h3>
+    <p>
+        GTalk is a simple chat application that uses sockets to form realtime bi-directional communication between multiple users.  
+        The application was built as a model for incorporating this type of functionality into future client applications. 
+    </p>   
+    <div id="BTSInfo" class="proj-bts">
+        <hr>
+        <div>
+            <div class="bts-img-container-outer">
+                Tech Stack
+                <div class="bts-img-container-inner">
+                    <img class="bts-img" src="/media/content_images/Logo-Javascript-HTML-CSS.jpg">
+                    <img class="bts-img" src="/media/content_images/LogoNodeJS.png">
+                    <img class="bts-img" src="/media/content_images/LogoExpress.png">
+                    <img class="bts-img" src="/media/content_images/LogoSocketIO.png">
+                    <img class="bts-img" src="/media/content_images/LogoHeroku.png">
+                    <img class="bts-img" src="/media/content_images/LogoGit.png">
+                    <img class="bts-img" src="/media/content_images/LogoGitHub.png">
+                </div>
+            </div>
+                <p class="bts-title">Behind The Scenes</p >
+                <p>
+                    GTalk is a chat application developed in vanilla Javascript, which uses Node.js, Express and Socket.IO for backend communication between users.
+                </p>
+                <p>
+                    The Welcome Page allows users to choose which chat discussion they wish to join.
+                    Once the discussion topic is selected, the user can chat in real-time with other users about that topic.
+                </p>
+                <p>
+                    The server-side code emits signals as users join/leave discussions. 
+                    When a signal is detected, the user is added to (or removed from) the socket. 
+                    A message is then broadcasted back out over the socket, notifying all other users that someone has joined/left the discussion.
+                    <br>
+                    When a user posts a message, the server-side code detects the message and broadcasts it back out over the socket to all other users in that discussion, thus facilitating real-time chat.
+                </p>
+                <p>
+                    The GTalk app is deployed on the Heroku cloud platform. The project is maintained with version control, using GIT, and pushed to a Github repository. 
+                    Heroku is configured with a pipeline to automatically recognize and deploy changes from the Github repository.
+                </p>
+                <p>
+                    To test drive the app, open multiple copies of the app's Welcome Page (index.html). This can be done on multiple devices or on a single device with multple browser windows.
+                    On each Welcome Page, enter a unique Username. Also, be sure to select the same discussion topic on each Welcome Page. This will allow real-time chatting between each browser window.
+                </p>
+            </div>
+    </div>
+</div>
+
+{% endblock content %}

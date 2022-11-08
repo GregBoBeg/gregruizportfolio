@@ -1,0 +1,86 @@
+
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+<div>
+    <div class="image-box">
+        <div>
+            <div class="proj-img">
+                <div id="proj-img" class="proj-img-inner">
+                    <div class="proj-img-front">
+                        <img src="/media/content_images/project-doneez.png">
+                    </div>
+                    <div class="proj-img-back">
+                        <img src="/media/content_images/ImgGear.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Use the "projectName" selected to dynamically load the corresponding HTML content -->
+
+        <div>
+            <h1>DoneEZ</h1>
+            <p class="link-list"><a class="link-item accordion" href="" target=" " id="BTSButton">Behind The Scenes</a></p>
+            <p class="link-list"><a class="link-item" href="https://doneez.com/" target="_blank" rel="noopener noreferrer" id="TDButton">Test Drive {{ projectName }}</a></p>
+            <p class="link-list"><a class="link-item" href="https://github.com/GregBoBeg/DoneEZ" target="_blank" rel="noopener noreferrer" id="TDButton">View Code on Github</a></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="proj-content">
+    <h3>Application Overview</h3>
+    <p>
+        DoneEZ.com is a platform that brings a comunity of Auto Mechanics and Parts Suppliers together to connect and conduct buisiness.
+        Parts Suppliers make auto-repair parts available to members of the platform at a special, proprietary discount.
+        Auto Mechanics can search for nearby Parts Suppliers and receive quicker turnaround times for the vehicles they are currently servicing. 
+    </p>
+    <h3>Client's Recommendation</h3>
+    <p>
+        "Greg is very thorough, and ensures the project is done right. 
+        His communication skills, genuine demeanor and business acumen make him quite easy to work with. 
+        Very happy with the web application that he has created, and I cannot thank him enough for all that he has done for me thus far. 
+        Looking forward to working with you on my next phase. Thanks Greg!"
+        <br><br>
+        Andy Lee<br>
+        Business Owner<br>
+        www.DoneEZ.com
+
+    </p>
+    <div id="BTSInfo" class="proj-bts">
+        <hr>
+        <div>
+            <div class="bts-img-container-outer">
+                Tech Stack
+                <div class="bts-img-container-inner">
+                    <img class="bts-img" src="/media/content_images/LogoPython.png">
+                    <img class="bts-img" src="/media/content_images/LogoDjango.png">
+                    <img class="bts-img" src="/media/content_images/LogoPostgreSQL.png">
+                    <img class="bts-img" src="/media/content_images/LogoBootstrap.png">
+                    <img class="bts-img" src="/media/content_images/Logo-Javascript-HTML-CSS.jpg">
+                    <img class="bts-img" src="/media/content_images/LogoAWS01.png">
+                    <img class="bts-img" src="/media/content_images/LogoGit.png">
+                    <img class="bts-img" src="/media/content_images/LogoGitHub.png">
+                </div>
+            </div>
+            <p class="bts-title">Behind The Scenes</p >
+            <p>DoneEZ was built in Django on a PostgreSQL database.  It leverages the strength of Django’s Admin Console, Security capabilities 
+                and a Custom User model to create division between different types of businesses that make up the platform’s community.  
+            </p>
+            <p>
+                The application includes a unique custom registration process that locks the user into a multi-step registration proces, and for certain business types, ending with an Admin review and approval process.
+            </p>
+            <p>
+                It also uses geo-mapping to search businesses, plot them on an OpenStreetMap representation, and calculate distances between suppliers.
+            </p>
+            <p>
+                The application architecture is structured to grow the platform’s community with a variety of business types, each with customizable functionality and product offerings.
+            </p>
+            <p>
+                The AWS platform includes advanced configurations for Elastic Beanstalk,  Amazon RDS for PostgreSQL, Amazon Route53, Elastic Load Balancing, AWS Secrets Manager, AWS Identity & Access Management, and S3 storage buckets.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

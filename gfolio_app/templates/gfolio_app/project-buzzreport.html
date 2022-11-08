@@ -1,18 +1,62 @@
 
-<!-- The following content will be inserted into the "project.html" template -->
+{% extends "gfolio_app/base.html" %}
+{% block content %}
+<div>
+    <div class="image-box">
+        <div>
+            <div class="proj-img">
+                <div id="proj-img" class="proj-img-inner">
+                    <div class="proj-img-front">
+                        <img src="/media/content_images/project-buzzreport.png">
+                    </div>
+                    <div class="proj-img-back">
+                        <img src="/media/content_images/ImgGear.png">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<p>
-    The Buzz-Report is a proprietary financial trading tool that analyzes up to 100 stock tickers
-    and identifies which stocks will see a daily increase in relative volume and price action.
-</p>
-<p>
-    The tool is written in Python and runs on any PC with an internet connection.
-    It uses web scraping methods to aggregate data from multiple financial websites and social media platforms.
-    The data is analyzed and processed using a number of complex proprietary calculations.
-    Finally, each stock is ranked on multiple data points, using a curve function of diminishing returns.
-</p>
-<p>
-    The end result is a spreadsheet which lists each stock, key decision data points,
-    and strength indicators for trading and investing purposes.
-</p>
-<p class="link-list"><a class="menu-item" href="/media/content_images/project-{{ projectName|lower }}-enlarged.png" target=" " id="TDButton">View Sample Report</a></p>
+    <!-- Use the "projectName" selected to dynamically load the corresponding HTML content -->
+
+        <div>
+            <h1>Buzz Report</h1>
+            <p class="link-list"><a class="link-item accordion" href="" target=" " id="BTSButton">Behind The Scenes</a></p>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<div class="proj-content">
+    <h3>Application Overview</h3>
+    <p>
+        The Buzz-Report is a proprietary financial trading tool that analyzes up to 100 stock tickers
+        and identifies which stocks will see a daily increase in relative volume and price action.
+    </p>   
+    <div id="BTSInfo" class="proj-bts">
+        <hr>
+        <div>
+
+            <p class="bts-title">Behind The Scenes</p >
+                <p>
+                    The tool is written in Python and runs locally on any PC with an internet connection.
+                    It uses web scraping methods to aggregate data from multiple financial websites and social media platforms.
+                    The data is analyzed and processed using a number of complex proprietary calculations.
+                    Finally, each stock is ranked on multiple data points, using a curve function of diminishing returns.
+                </p>
+                <p>
+                    The end result is a spreadsheet which lists each stock, key decision data points,
+                    and strength indicators for trading and investing purposes.
+                </p>
+                    <img src="/media/content_images/project-buzzreport-enlarged.png" width="650px">
+                <!-- <a class="menu-item" href="/media/content_images/project-buzzreport-enlarged.png" target=" " id="TDButton">
+                </a> -->
+                
+            </div>
+    </div>
+</div>
+
+{% endblock content %}
+
